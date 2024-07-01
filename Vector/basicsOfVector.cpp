@@ -69,6 +69,7 @@ int main(){
     //search in vector
     binary_search(v.begin(), v.end(),5);
     
-    //iterator in vector    
+    //iterator in vector
+    //This is also an vector   
 
 }
