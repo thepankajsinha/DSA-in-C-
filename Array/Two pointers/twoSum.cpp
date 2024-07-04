@@ -1,21 +1,22 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
-void twoSum(int arr[], int n, int target){
-    int start =0, end =n-1;
+void twoSum(vector<int> &v, int target){
+    int start =0, end =v.size()-1;
 
     while (start<=end)
     {
-        if (arr[start] + arr[end]== target)
+        if (v[start] + v[end]== target)
         {
-            cout<<arr[start]<<" "<<arr[end];
+            cout<<v[start]<<" "<<v[end];
             break;
         }
-        else if (arr[start] + arr[end] > target)
+        else if (v[start] + v[end] > target)
         {
             end--;
         }
-        else if (arr[start] + arr[end] < target)
+        else if (v[start] + v[end] < target)
         {
             start++;
         } 
@@ -23,15 +24,21 @@ void twoSum(int arr[], int n, int target){
 }
 
 int main(){
-    int n;
-    cin>>n;
+    int size;
+    cout << "Enter size: ";
+    cin >> size;
 
-    int arr[n];
-    for (int i = 0; i < n; i++){
-        cin>>arr[i];
+    vector<int> v(size);
+    cout << "Enter array elements: ";
+
+    for (int i = 0; i < v.size(); i++)
+    {
+        cin >> v[i];
     }
 
+
     int target;
+    cout<<"Enter target: ";
     cin>>target;
-    twoSum(arr,n,target);    
+    twoSum(v,target);    
 }

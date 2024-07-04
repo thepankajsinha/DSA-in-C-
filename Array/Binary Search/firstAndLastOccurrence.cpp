@@ -1,41 +1,42 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
-void firstAndLastOccurrence(int arr[], int n, int target){
+void firstAndLastOccurrence(vector<int> &v, int target){
 
-    int start =0, end = n-1;
+    int start =0, end = v.size()-1;
     int first = -1, last = -1;
 
     //first occurrence
     while (start <= end){
         int mid = (start + end)/2;
 
-        if (arr[mid]==target){
+        if (v[mid]==target){
             first = mid;
             end = mid-1;
         }
-        else if (arr[mid] < target){
+        else if (v[mid] < target){
             start = mid + 1;
         }
-        else if (arr[mid] > target){
+        else if (v[mid] > target){
             end = mid - 1;
         }  
     }
 
     //last occurrence
-    start = 0, end = n-1;
+    start = 0, end = v.size()-1;
 
      while (start <= end){
         int mid = (start + end)/2;
 
-        if (arr[mid]==target){
+        if (v[mid]==target){
             last = mid;
             start = mid+1;
         }
-        else if (arr[mid] < target){
+        else if (v[mid] < target){
             start = mid + 1;
         }
-        else if (arr[mid] > target){
+        else if (v[mid] > target){
             end = mid - 1;
         }  
     }
@@ -45,20 +46,21 @@ void firstAndLastOccurrence(int arr[], int n, int target){
 }
 int main()
 {
-    int n;
-    cout << "Enter the number of elements: ";
-    cin >> n;
+    int size;
+    cout << "Enter size: ";
+    cin >> size;
 
-    int arr[n]; 
+    vector<int> v(size);
+    cout << "Enter array elements: ";
 
-    cout << "Enter the elements: "; 
-    for (int i = 0; i < n; i++){
-        cin >> arr[i]; 
+    for (int i = 0; i < v.size(); i++)
+    {
+        cin >> v[i];
     }
 
     int target;
     cout<<"Enter the target element: ";
     cin>>target;
 
-    firstAndLastOccurrence(arr,n,target);
+    firstAndLastOccurrence(v,target);
 }

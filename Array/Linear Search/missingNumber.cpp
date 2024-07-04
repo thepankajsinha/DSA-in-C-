@@ -1,16 +1,18 @@
 #include <iostream>
+#include <vector>
 #include <climits>
 using namespace std;
 
-int missingNumber(int arr[], int n){
+int missingNumber(vector <int> &v){
     
     //sum of all elemenmts in an array
     int sum = 0;
-    for (int i = 0; i < n-1; i++){
-        sum = sum + arr[i];
+    for (int i = 0; i < v.size(); i++){
+        sum = sum + v[i];
     }
     
     //sum of first n numbers
+    int n = v.size()+1;
     int ans = (n*(n+1))/2;
 
     return ans - sum;
@@ -18,16 +20,19 @@ int missingNumber(int arr[], int n){
 }
 
 int main(){
-    int n;
-    cin >> n;
+    int size;
+    cout<<"Enter size: ";
+    cin>>size;
 
-    int arr[n];
-
-    for (int i = 0; i < n-1; i++){
-        cin >> arr[i];
+    vector <int> v(size);
+    cout<<"Enter array elements: ";
+    
+    for (int i = 0; i < v.size(); i++)
+    {
+        cin>>v[i];
     }
     
-    int missNo = missingNumber(arr, n);
+    int missNo = missingNumber(v);
 
     cout<< "Missing Number is: " <<missNo<< endl;
 }

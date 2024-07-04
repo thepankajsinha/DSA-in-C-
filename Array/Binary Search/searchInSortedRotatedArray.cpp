@@ -1,20 +1,21 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
-int searchInSortedRotatedArray(int arr[], int n, int target){
-    int start = 0, end = n-1, ans = -1;
+int searchInSortedRotatedArray(vector<int> &v, int target){
+    int start = 0, end = v.size()-1, ans = -1;
 
     while (start <= end)
     {
         int mid = (start + end )/2;
-        if (arr[mid] == target)
+        if (v[mid] == target)
         {
             return mid;
         }
 
-        else if (arr[mid] >= arr[0])
+        else if (v[mid] >= v[0])
         {
-            if (arr[start] <= target && arr[mid] >= target)
+            if (v[start] <= target && v[mid] >= target)
             {
                 end = mid -1;
             }
@@ -25,7 +26,7 @@ int searchInSortedRotatedArray(int arr[], int n, int target){
         }
 
         else{
-             if (arr[mid] <= target && arr[end] >= target)
+             if (v[mid] <= target && v[end] >= target)
             {
                 start = mid + 1;
             }
@@ -38,21 +39,22 @@ int searchInSortedRotatedArray(int arr[], int n, int target){
 }
 int main()
 {
-    int n;
-    cout << "Enter the number of elements: ";
-    cin >> n;
+    int size;
+    cout << "Enter size: ";
+    cin >> size;
 
-    int arr[n]; 
+    vector<int> v(size);
+    cout << "Enter array elements: ";
 
-    cout << "Enter the elements: "; 
-    for (int i = 0; i < n; i++){
-        cin >> arr[i]; 
+    for (int i = 0; i < v.size(); i++)
+    {
+        cin >> v[i];
     }
 
     int target;
     cout<<"Enter search element: ";
     cin>>target;
 
-    int ans = searchInSortedRotatedArray(arr,n, target);
+    int ans = searchInSortedRotatedArray(v, target);
     cout<<ans;
 }

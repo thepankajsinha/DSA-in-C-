@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "iostream": "cpp",
-        "rotatematrix180clockwise": "c"
+        "rotatematrix180clockwise": "c",
+        "vector": "cpp"
     }
 }

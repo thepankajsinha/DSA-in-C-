@@ -1,18 +1,19 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
-int minInRotatedArray(int arr[], int n){
+int minInRotatedArray(vector<int> &v){
 
-    int start =0, end = n-1, ans;
+    int start =0, end = v.size()-1, ans;
 
     while (start <= end){
         int mid = (start + end)/2;
 
-        if (arr[mid] >= arr[0]){
+        if (v[mid] >= v[0]){
             start = mid + 1;
         }
         else{
-            ans = arr[mid];
+            ans = v[mid];
             end = mid - 1;
         }
     }
@@ -20,17 +21,18 @@ int minInRotatedArray(int arr[], int n){
 }
 int main()
 {
-    int n;
-    cout << "Enter the number of elements: ";
-    cin >> n;
+    int size;
+    cout << "Enter size: ";
+    cin >> size;
 
-    int arr[n]; 
+    vector<int> v(size);
+    cout << "Enter array elements: ";
 
-    cout << "Enter the elements: "; 
-    for (int i = 0; i < n; i++){
-        cin >> arr[i]; 
+    for (int i = 0; i < v.size(); i++)
+    {
+        cin >> v[i];
     }
 
-    int ans =minInRotatedArray(arr,n);
+    int ans =minInRotatedArray(v);
     cout<<ans;
 }

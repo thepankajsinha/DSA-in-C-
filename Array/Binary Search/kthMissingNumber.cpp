@@ -1,13 +1,14 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
-int kthMissingNumber(int arr[], int n, int k){
-    int start = 0, end = n-1, ans = -1;
+int kthMissingNumber(vector<int> &v, int k){
+    int start = 0, end = v.size()-1, ans = -1;
 
     while (start <= end)
     {
         int mid = (start + end )/2;
-        if (arr[mid] - mid -1 >= k)
+        if (v[mid] - mid -1 >= k)
         {
             ans = mid;
             end = mid - 1;
@@ -23,21 +24,22 @@ int kthMissingNumber(int arr[], int n, int k){
 
 int main()
 {
-    int n;
-    cout << "Enter the number of elements: ";
-    cin >> n;
+    int size;
+    cout << "Enter size: ";
+    cin >> size;
 
-    int arr[n]; 
+    vector<int> v(size);
+    cout << "Enter array elements: ";
 
-    cout << "Enter the elements: "; 
-    for (int i = 0; i < n; i++){
-        cin >> arr[i]; 
+    for (int i = 0; i < v.size(); i++)
+    {
+        cin >> v[i];
     }
-
+    
     int k;
     cout<<"Enter kth element: ";
     cin>>k;
 
-    int ans = kthMissingNumber(arr,n,k);
+    int ans = kthMissingNumber(v,k);
     cout<<"Kth missing element is : "<<ans;
 }

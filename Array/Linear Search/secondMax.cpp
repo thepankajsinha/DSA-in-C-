@@ -1,20 +1,21 @@
 #include <iostream>
+#include <vector>
 #include <climits>
 using namespace std;
 
-int secondMax(int arr[], int size){
+int secondMax(vector<int> &v){
     
-    int maxNo = arr[0];
-    for (int i = 0; i < size; i++){
-        if (arr[i] > maxNo){
-            maxNo = arr[i];
+    int maxNo = v[0];
+    for (int i = 0; i < v.size(); i++){
+        if (v[i] > maxNo){
+            maxNo = v[i];
         }
     }
     
     int secondMax = -1;
-    for (int i = 0; i < size; i++){
-        if (arr[i] != maxNo){
-            secondMax = max(secondMax, arr[i]);
+    for (int i = 0; i < v.size(); i++){
+        if (v[i] != maxNo){
+            secondMax = max(secondMax, v[i]);
         }
     }
     return secondMax;
@@ -22,15 +23,18 @@ int secondMax(int arr[], int size){
 
 int main(){
     int size;
+    cout << "Enter size: ";
     cin >> size;
 
-    int arr[size];
+    vector<int> v(size);
+    cout << "Enter array elements: ";
 
-    for (int i = 0; i < size; i++){
-        cin >> arr[i];
+    for (int i = 0; i < v.size(); i++)
+    {
+        cin >> v[i];
     }
-    
-    int ans = secondMax(arr, size);
 
-    cout << "Second Maximum element is: " << ans<< endl;
+    int ans = secondMax(v);
+
+    cout << "Second Max element is: " << ans<< endl;
 }

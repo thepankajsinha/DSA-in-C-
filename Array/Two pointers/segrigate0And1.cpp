@@ -1,39 +1,48 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
-void segrigate0And1(int arr[], int n){
-    int start =0, end =n-1;
+void segrigate0And1(vector<int> &v){
+    int start =0, end =v.size()-1;
 
     while (start<=end)
     {
-        if (arr[start]== 1 && arr[end]==0)
+        if (v[start]== 1 && v[end]==0)
         {
-            swap(arr[start], arr[end]);
+            swap(v[start], v[end]);
         }
-        else if (arr[start]==0)
+        else if (v[start]==0)
         {
             start++;
         }
-        else if (arr[end]==1)
+        else if (v[end]==1)
         {
             end--;
         } 
-    }
+    } 
+}
 
-    for (int i = 0; i < n; i++)
+void display(vector<int> &v)
+{
+    for (int i = 0; i < v.size(); i++)
     {
-        cout<<arr[i]<<" ";
-    }    
+        cout << v[i] << " ";
+    }
 }
 
 int main(){
-    int n;
-    cin>>n;
+    int size;
+    cout << "Enter size: ";
+    cin >> size;
 
-    int arr[n];
-    for (int i = 0; i < n; i++){
-        cin>>arr[i];
+    vector<int> v(size);
+    cout << "Enter array elements: ";
+
+    for (int i = 0; i < v.size(); i++)
+    {
+        cin >> v[i];
     }
 
-    segrigate0And1(arr,n);    
+    segrigate0And1(v);  
+    display(v);  
 }

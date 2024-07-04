@@ -30,10 +30,7 @@ void missingAndRepeatingElement(int arr[], int n){
 
     cout<<"Repeating element is: "<<ans[0]<<endl;
     cout<<"Missing element is: "<<ans[1];
-    
-    
-    
-    
+        
 }
 
 int main(){

@@ -1,9 +1,10 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
-int linearSearch(int arr[], int size, int key){
-    for (int i = 0; i < size; i++){
-        if (arr[i]==key){
+int linearSearch(vector <int> &v, int key){
+    for (int i = 0; i < v.size(); i++){
+        if (v[i]==key){
             return i;
         }
     }
@@ -12,20 +13,22 @@ int linearSearch(int arr[], int size, int key){
 int main()
 {
     int size;
-    cout << "Enter the number of elements: ";
-    cin >> size;
+    cout<<"Enter size: ";
+    cin>>size;
 
-    int arr[size]; 
-
-    cout << "Enter the elements: "; 
-    for (int i = 0; i < size; i++){
-        cin >> arr[i]; 
+    vector <int> v(size);
+    cout<<"Enter array elements: ";
+    
+    for (int i = 0; i < v.size(); i++)
+    {
+        cin>>v[i];
     }
+    
 
     int key;
-    cout<<"Enter the element which you want to find: ";
+    cout<<"Enter key element: ";
     cin>>key;
 
-    int ans = linearSearch(arr, size, key);
+    int ans = linearSearch(v, key);
     cout<<ans;
 }

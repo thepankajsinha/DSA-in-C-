@@ -1,37 +1,43 @@
 //Rotate array by 1
 #include <iostream>
+#include <vector>
 #include <climits>
 using namespace std;
 
-void rotateArray(int arr[], int n){
-    int lastElement= arr[n-1];
+void rotateArray(vector <int> &v){
+    int lastElement= v[v.size()-1];
 
-    for (int i = n-2; i >= 0; i--){
+    for (int i = v.size()-2; i >= 0; i--){
         
-       arr[i+1] = arr[i];
+       v[i+1] = v[i];
     }
 
-    arr[0] = lastElement;
+    v[0] = lastElement;
 
-    for (int i = 0; i < n; i++){
-        cout<<arr[i]<<" ";
+}
+
+void display(vector<int> &v)
+{
+    for (int i = 0; i < v.size(); i++)
+    {
+        cout << v[i] << " ";
     }
-    
 }
 
 int main(){
 
-    int n;
-    cout<<"Enter number of elements : ";
-    cin>>n;
+    int size;
+    cout<<"Enter size: ";
+    cin>>size;
 
-    int arr[n];
-    cout<<"Enter the elements of array: ";
-    for (int i = 0; i < n; i++)
-    {
-        cin>>arr[i];
-    }
+    vector <int> v(size);
+    cout<<"Enter array elements: ";
     
+    for (int i = 0; i < v.size(); i++)
+    {
+        cin>>v[i];
+    }
 
-    rotateArray(arr,n);
+    rotateArray(v);
+    display(v);
 }

@@ -1,21 +1,22 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
-void pairWithGivenDIff(int arr[], int n, int target){
-    int start =0, end =n-1;
+void pairWithGivenDIff(vector<int> &v, int target){
+    int start =0, end =v.size()-1;
 
     while (start<=end)
     {
-        if (arr[end] - arr[start] == target)
+        if (v[end] - v[start] == target)
         {
-            cout<<arr[start]<<" "<<arr[end];
+            cout<<v[start]<<" "<<v[end];
             break;
         }
-        else if (arr[end] - arr[start] < target)
+        else if (v[end] - v[start] < target)
         {
             start++;
         }
-        else if (arr[end] - arr[start] > target)
+        else if (v[end] - v[start] > target)
         {
             end--;
         } 
@@ -23,16 +24,21 @@ void pairWithGivenDIff(int arr[], int n, int target){
 }
 
 int main(){
-    int n;
-    cin>>n;
+    int size;
+    cout << "Enter size: ";
+    cin >> size;
 
-    int arr[n];
-    for (int i = 0; i < n; i++){
-        cin>>arr[i];
+    vector<int> v(size);
+    cout << "Enter array elements: ";
+
+    for (int i = 0; i < v.size(); i++)
+    {
+        cin >> v[i];
     }
 
-    int target;
 
+    int target;
+    cout<<"Enter target element: ";
     cin>>target;
-    pairWithGivenDIff(arr,n,target);    
+    pairWithGivenDIff(v,target);    
 }

@@ -26,11 +26,11 @@ int main(){
         cout<<v[i]<<" ";
     }
 
-    //Take user input
-    // for (int i = 0; i < v.size(); i++)
-    // {
-    //     cin>>v[i];
-    // }
+    // Take user input
+    for (int i = 0; i < v.size(); i++)
+    {
+        cin>>v[i];
+    }
 
     //update value
     v[0]=10;

@@ -1,13 +1,14 @@
 #include <iostream>
+#include <vector>
 #include <climits>
 using namespace std;
 
-void largestSumContiguousSubarray(int arr[], int n){
+void largestSumContiguousSubarray(vector<int> &v){
     int maxi = INT_MIN, prefix=0;
 
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < v.size(); i++)
     {
-        prefix = prefix + arr[i];
+        prefix = prefix + v[i];
         maxi = max(maxi, prefix);
         if (prefix < 0)
         {
@@ -18,13 +19,17 @@ void largestSumContiguousSubarray(int arr[], int n){
 }
 
 int main(){
-    int n;
-    cin>>n;
+    int size;
+    cout << "Enter size: ";
+    cin >> size;
 
-    int arr[n];
-    for (int i = 0; i < n; i++){
-        cin>>arr[i];
+    vector<int> v(size);
+    cout << "Enter array elements: ";
+
+    for (int i = 0; i < v.size(); i++)
+    {
+        cin >> v[i];
     }
 
-    largestSumContiguousSubarray(arr,n);    
+    largestSumContiguousSubarray(v);    
 }
