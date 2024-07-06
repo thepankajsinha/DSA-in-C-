@@ -1,4 +1,3 @@
-//first program
 #include <iostream>     
 using namespace std;
 
