@@ -2,6 +2,7 @@
     "files.associations": {
         "iostream": "cpp",
         "rotatematrix180clockwise": "c",
-        "vector": "cpp"
+        "vector": "cpp",
+        "20soildinvertedrightangletriangle": "c"
     }
 }
