@@ -10,9 +10,12 @@ void alphabetOrNot(int ch)
         cout << "Lowercase alphabet.";
     }
     
-    if (ASCII_Value >= 65 && ASCII_Value <= 90)
+    else if (ASCII_Value >= 65 && ASCII_Value <= 90)
     {
         cout << "Uppercase alphabet.";
+    }
+    else{
+        cout<<"Not an alphabet.";
     }
 }
 

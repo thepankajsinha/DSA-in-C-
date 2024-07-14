@@ -1,20 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int main()
-{
-
-    cout << "**Calculator**" << endl;
-    cout << "Only +,-,*,/ operators allowed."<<endl;
-
-    int num1, num2;
-    cout << "Enter two numbers: ";
-    cin >> num1 >> num2;
-
-    char operators;
-    cout << "Enter an operator ";
-    cin >> operators;
-
+void calculator(int num1, int num2, char operators){
     switch (operators)
     {
     case '+':
@@ -42,5 +29,22 @@ int main()
         break;
     }
 
+}
+
+int main()
+{
+
+    cout << "**Calculator**" << endl;
+    cout << "Only +,-,*,/ operators allowed."<<endl;
+
+    int num1, num2;
+    cout << "Enter two numbers: ";
+    cin >> num1 >> num2;
+
+    char operators;
+    cout << "Enter an operator ";
+    cin >> operators;
+
+    calculator(num1, num2, operators);
     return 0;
 }

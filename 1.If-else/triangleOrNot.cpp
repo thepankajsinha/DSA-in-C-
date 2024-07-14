@@ -3,14 +3,9 @@ using namespace std;
 
 void triangleOrNot(int a, int b, int c)
 {
-    if ((a+b>c)&&(b+c>a)&&(c+a>b))
-    {
-        cout<<"Valid triangle.";
-    }
-    else{
-        cout<<"Invalid triangle.";
-    }
+    if ((a+b>c)&&(b+c>a)&&(c+a>b)) cout<<"Valid triangle.";
     
+    else cout<<"Invalid triangle.";  
 }
 
 int main()

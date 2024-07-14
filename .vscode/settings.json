@@ -5,6 +5,7 @@
         "vector": "cpp",
         "20soildinvertedrightangletriangle": "c",
         "new": "cpp",
-        "numeric": "cpp"
+        "numeric": "cpp",
+        "random": "cpp"
     }
 }

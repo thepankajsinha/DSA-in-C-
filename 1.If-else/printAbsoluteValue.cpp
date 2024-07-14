@@ -2,13 +2,8 @@
 using namespace std;
 
 void printAbsoluteValue(int n){
-    if (n > 0)
-    {
-        cout<<n;
-    }
-    else{
-        cout<<-n;
-    }
+    if (n > 0) cout<<n;
+    else cout<<-n;
 }
 
 int main(){
