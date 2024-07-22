@@ -3,17 +3,13 @@ using namespace std;
 
 int fibonacci(int n)
 {
-    if (n == 0 || n == 1) 
-    {
-        return n;
-    }
-    int ans =fibonacci(n-1) + fibonacci(n-2);
-    return ans;
+    if (n == 1 || n == 2) return 1;
+
+    return fibonacci(n-1) + fibonacci(n-2);
 }
 
 int main()
 {
-    int n = 7;
-
+    int n = 5;
     cout << fibonacci(n);
 }
