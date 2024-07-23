@@ -2,8 +2,8 @@
 #include <vector>
 using namespace std;
 
-void segrigate0And1(vector<int> &v){
-    int start =0, end =v.size()-1;
+void sortZeroAndOne(vector<int> &v){
+    int start = 0, end =v.size()-1;
 
     while (start<=end)
     {
@@ -35,14 +35,16 @@ int main(){
     cout << "Enter size: ";
     cin >> size;
 
-    vector<int> v(size);
+    vector<int> v;
     cout << "Enter array elements: ";
 
     for (int i = 0; i < v.size(); i++)
     {
-        cin >> v[i];
+        int x;
+        cin >> x;
+        v.push_back(x);
     }
 
-    segrigate0And1(v);  
-    display(v);  
+    sortZeroAndOne(v);  
+    display(v);
 }
