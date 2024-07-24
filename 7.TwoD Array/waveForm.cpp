@@ -4,18 +4,21 @@ using namespace std;
 
 void waveForm(int row, int col, int matrix[][100])
 {
-    for (int j = 0; j < col; j++)
+    //when row is even then print the row normaly
+    for (int i = 0; i < row; i++)
     {
-        if (j % 2 == 0)
+        if (i % 2 == 0)
         {
-            for (int i = 0; i < row; i++)
+            for (int j = 0; j < col; j++)
             {
                 cout << matrix[i][j] << " ";
             }
         }
+
+        //if row is odd then print the column in reverse order
         else
         {
-            for (int i = row - 1; i >= 0; i--)
+            for (int j = col - 1; j >= 0; j--)
             {
                 cout << matrix[i][j] << " ";
             }
@@ -26,9 +29,11 @@ void waveForm(int row, int col, int matrix[][100])
 int main()
 {
     int row, col;
+    cout<<"Enter row and column"<<endl;
     cin >> row >> col;
 
     int matrix[100][100];
+    cout<<"Enter elements in matrix"<<endl;
     for (int i = 0; i < row; i++)
     {
         for (int j = 0; j < col; j++)
