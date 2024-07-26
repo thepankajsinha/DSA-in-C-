@@ -5,7 +5,9 @@ using namespace std;
 
 int searchInSortedRowColWiseMatrix(int row, int col, int matrix[][100], int key)
 {
-    int i = 0, j = col - 1;
+    int i = 0;
+    int j = col - 1;
+    
     while (i < row && j >=0)
     {
         if (matrix[i][j] == key)
