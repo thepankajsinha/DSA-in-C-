@@ -1,35 +1,30 @@
-#include <iostream>     
+#include <iostream>
 using namespace std;
 
-void insertionSort(int arr[], int n){
+void insertionSort(int arr[], int n)
+{
 
     for (int i = 1; i < n; i++){
-      
-      for (int j= i; j > 0; j--)
-      {
-         if (arr[j] < arr[j-1])
-         {
-            swap(arr[j], arr[j-1]);
-         }
-         else break;      
-      }
-    } 
+        int j = i;
+        while (j>=1){
 
-    for (int i = 0; i < n; i++){
-        cout<<arr[i]<<" ";
-    }      
-}
-
-int main(){
-    int n;
-    cout<<"Enter number of elements: ";
-    cin>>n;
-
-    int arr[n];
-    cout<<"Enter the elements of array:";
-    for (int  i = 0; i < n; i++){
-        cin>>arr[i];
+            if(arr[j] >= arr[j-1]) break;
+            else swap(arr[j], arr[j-1]);
+            j--;
+        }
+        
     }
 
-    insertionSort(arr, n);   
+
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
+}
+
+int main()
+{
+    int n = 5;
+    int arr[n] = {5, 4, 3, 2, 1};
+    insertionSort(arr, n);
 }
