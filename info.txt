@@ -1,5 +1,0 @@
-How to calculate time complexity
-
-1. (kn) -> n
-Exapmle-> 5n -> n
-

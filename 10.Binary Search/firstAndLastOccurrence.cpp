@@ -64,3 +64,11 @@ int main()
 
     firstAndLastOccurrence(v,target);
 }
+
+//Ex:
+//arr = {10,20,20,20,30,40,50}, key = 20
+//first occurences of 20 is at index 1
+
+//arr = {10,20,20,20,30,40,50}, key = 20
+//last occurences of 20 is at index 3
+
