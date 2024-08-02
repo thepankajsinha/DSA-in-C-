@@ -21,9 +21,9 @@ int main(){
     Node d(40);
 
     //Link all the nodes together
-    a.next = &b;
-    b.next = &c;
-    c.next = &d;
+    a.next = &b;  //a -> b
+    b.next = &c;  //a -> b -> c
+    c.next = &d;  //a -> b -> c -> d
 
     // Print the linked list
     Node *temp = &a;
