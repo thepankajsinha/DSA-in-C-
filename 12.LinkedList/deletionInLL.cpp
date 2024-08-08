@@ -72,8 +72,7 @@ void deleteFromEnd(Node *&head)
     temp->next = NULL; // Change next of second last
 }
 
-void deleteAtIndex(Node *&head, int index)
-{
+void deleteAtIndex(Node *&head, int index){
 
     // if index is at first node
     if (index == 0)
@@ -96,9 +95,7 @@ void deleteAtIndex(Node *&head, int index)
         temp = temp->next;
     }
 
-    Node *nodeToDelete = temp->next;
-    temp->next = nodeToDelete->next;
-    delete nodeToDelete;
+    temp->next = temp->next->next;
 }
 
 void display(Node *head)
@@ -126,5 +123,11 @@ int main()
     node2->next = node3;
     node3->next = node4;
     node4->next = node5;
+
+    display(node1);
+    deleteAtIndex(node1, 0);
+    display(node1);
+    deleteAtIndex(node1, 2);
+    display(node1);
 
 }
