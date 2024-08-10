@@ -21,6 +21,7 @@ class Stack{
         size = 0;
     }
 
+    //inserting node at head
     void push(int val){
         Node* newNode = new Node(val);
         newNode->next = head;
@@ -28,7 +29,7 @@ class Stack{
         size++;
     }
 
-    
+    //deleting node from head
     void pop(){
         if(head == NULL){
             cout<<"Stack is empty!"<<endl;
