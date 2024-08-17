@@ -1,3 +1,4 @@
+//find number of nodes in the tree
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -18,13 +19,8 @@ public:
 
 int sizeOfTree(Node* root){
     if(root == NULL) return 0;
-
-    int leftSize = sizeOfTree(root->left);
-    int rightSize = sizeOfTree(root->right);
-    int ans = 1 + leftSize + rightSize;
-
+    int ans = 1 + sizeOfTree(root->left) + sizeOfTree(root->right);
     return ans;
-
 }
 
 int main()

@@ -6,6 +6,7 @@
         "20soildinvertedrightangletriangle": "c",
         "new": "cpp",
         "numeric": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "*.tcc": "cpp"
     }
 }

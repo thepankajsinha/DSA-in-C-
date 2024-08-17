@@ -1,9 +1,10 @@
-#include <bits/stdc++.h>
+//find node with maximum value
+#include <iostream>
 #include <algorithm>
 using namespace std;
 
-class Node
-{
+
+class Node{
 public:
     int val;
     Node *left;
@@ -18,11 +19,15 @@ public:
 };
 
 int maxInTree(Node* root){
-    if(root == NULL) return INT_MIN;
 
-    return max(root->val, maxInTree(root->left), maxInTree(root->right));
+    if(root == NULL) return -1;
 
+    int leftMax = maxInTree(root->left);
+    int rightMax = maxInTree(root->right);
 
+    int maxValue= max(root->val, max(leftMax, rightMax));
+
+    return maxValue;
 }
 
 int main()

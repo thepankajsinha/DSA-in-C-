@@ -1,9 +1,9 @@
+//find the number of levels in the tree
 #include <bits/stdc++.h>
 #include <algorithm>
 using namespace std;
 
-class Node
-{
+class Node{
 public:
     int val;
     Node *left;
@@ -20,7 +20,8 @@ public:
 int levelOfTree(Node* root){
     if(root == NULL) return 0;
 
-    return 1 + max(levelOfTree(root->left), levelOfTree(root->right));
+    int level = 1 + max(levelOfTree(root->left), levelOfTree(root->right));
+    return level;
 }
 
 int main()

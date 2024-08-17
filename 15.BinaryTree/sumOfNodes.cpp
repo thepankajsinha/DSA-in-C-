@@ -1,3 +1,4 @@
+//find sum of all nodes value
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -18,13 +19,8 @@ public:
 
 int sumOfNodes(Node* root){
     if(root == NULL) return 0;
-
-    int leftSum = sumOfNodes(root->left);
-    int rightSum = sumOfNodes(root->right);
-    int ans = root->val + leftSum + rightSum;
-
+    int ans = root->val + sumOfNodes(root->left) + sumOfNodes(root->right);
     return ans;
-
 }
 
 int main()
