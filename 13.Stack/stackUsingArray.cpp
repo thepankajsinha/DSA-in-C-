@@ -7,7 +7,7 @@ class Stack{
     int idx = -1;
 
     void push(int val){
-        if(isFull()){
+        if(size() == 10){
             cout<<"Stack Overflow"<<endl;
             return;
         }
@@ -22,22 +22,13 @@ class Stack{
     }
 
     void pop(){
-        if(isEmpty()) cout<<"Stack Underflow"<<endl;
+        if(idx == -1) cout<<"Stack Underflow"<<endl;
         else idx--;
     }
 
     int top(){
         if(idx == -1) cout<<"Stack is Empty"<<endl;
         else return arr[idx];
-    }
-
-    bool isEmpty(){
-        if(idx == -1) return true;
-    }
-
-
-    bool isFull(){
-        if(size() == 10) return true;
     }
 
 };
