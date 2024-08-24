@@ -18,44 +18,36 @@ int size(Node *head)
 {
     Node *temp = head;
     int count = 0;
-    while (temp != NULL)
-    {
+    while (temp != NULL){
         count++;
         temp = temp->next;
     }
     return count;
 }
 
-void deleteFromFront(Node *&head)
-{
+void deleteFromFront(Node *&head){
     // condition for empty linked list
-    if (head == NULL)
-    {
+    if (head == NULL){
         cout << "Linked List is empty";
         return;
     }
     // condition for non empty linked list
-    else
-    {
+    else{
         Node *temp = head; // store current node in temp variable
         head = head->next; // Update head to the next node
         delete temp;       // now delete the head node
     }
 }
 
-void deleteFromEnd(Node *&head)
-{
-
+void deleteFromEnd(Node *&head){
     // condition for empty linked list
-    if (head == NULL)
-    {
+    if (head == NULL){
         cout << "Linked List is empty";
         return;
     }
 
     // condition for single node linked list
-    if (head->next == NULL)
-    {
+    if (head->next == NULL){
         deleteFromFront(head);
         return;
     }
@@ -63,8 +55,7 @@ void deleteFromEnd(Node *&head)
     // condition for more than one node linked list
 
     Node *temp = head; // store second last node in temp variable
-    while (temp->next->next != NULL)
-    {
+    while (temp->next->next != NULL){
         temp = temp->next;
     }
     delete temp->next; // Delete the last node
@@ -75,34 +66,29 @@ void deleteFromEnd(Node *&head)
 void deleteAtIndex(Node *&head, int index){
 
     // if index is at first node
-    if (index == 0)
-    {
+    if (index == 0){
         deleteFromFront(head);
         return;
     }
 
     // if index is last node
-    else if (index == size(head))
-    {
+    else if (index == size(head)){
         deleteFromEnd(head);
         return;
     }
 
     // if index is any other node
     Node *temp = head;
-    for (int i = 0; i < index - 1; i++)
-    {
+    for (int i = 0; i < index - 1; i++){
         temp = temp->next;
     }
 
     temp->next = temp->next->next;
 }
 
-void display(Node *head)
-{
+void display(Node *head){
     Node *temp = head;
-    while (temp != NULL)
-    {
+    while (temp != NULL){
         cout << temp->data << " -> ";
         temp = temp->next;
     }

@@ -5,10 +5,12 @@ class Node{
     public:
     int data;
     Node *next;
+    Node *prev;
 
     Node(int val){
         data =val;
         next = NULL;
+        prev = NULL;
     }
 };
 
@@ -28,7 +30,6 @@ int main(){
     // Print the linked list
     Node *temp = node1;
     while (temp != NULL){
-
         cout << temp->data << " -> ";
         temp = temp->next;
     }
