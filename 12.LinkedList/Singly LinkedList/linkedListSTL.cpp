@@ -57,9 +57,9 @@ int main(){
     
     
     //remove elements from a specific position
-    list<int>::iterator it = li.begin();
-    advance(it,2); //reach at 2nd index
-    li.erase(it); //remove element present at 2nd index
+    itr = li.begin(); //update iterator at beginning of list
+    advance(itr,2); //reach at 2nd index
+    li.erase(itr); //remove element present at 2nd index
     printList(li); //5 4 1 2
     
     
