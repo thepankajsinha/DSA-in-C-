@@ -1,7 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Node{
+//class Node is a user defined data structure
+class Node{  
     public:
     int data;
     Node *next;
