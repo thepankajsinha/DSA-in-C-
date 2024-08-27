@@ -14,6 +14,8 @@ public:
         this->right = NULL;
     }
 };
+
+
 Node* invertTree(Node *root){
    //condition for empty tree
    if(root == NULL) return NULL;

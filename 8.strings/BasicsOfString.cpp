@@ -1,8 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main()
-{
+int main(){
 
     //how to convert string to integer
     string str = "10";
