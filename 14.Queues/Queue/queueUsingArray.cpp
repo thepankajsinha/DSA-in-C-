@@ -8,7 +8,7 @@ class Queue{
     int front = 0;
     int back = 0;
 
-    void push(int val){
+    void push(int val){ //T.C -O(1)
         if(size()==5){
             cout<<"Queue is full."<<endl;
             return;
@@ -19,12 +19,12 @@ class Queue{
         }
     }
 
-    int size(){
+    int size(){  //T.C -O(1)
         return back - front;
     }
 
-    void pop(){
-        if(size()==0){
+    void pop(){  //T.C -O(1)
+        if(size()==0){  
             cout<<"Queue is empty."<<endl;
             return;
         }
@@ -33,17 +33,17 @@ class Queue{
         }
     }
 
-    int returnFront(){
+    int returnFront(){ //T.C -O(1)
         if(size()==0) cout<<"Queue is Empty"<<endl;
         else return arr[front];
     }
 
-    int returnBack(){
+    int returnBack(){ //T.C -O(1)
         if(size()==0) cout<<"Queue is Empty"<<endl;
         else return arr[back-1];
     }
 
-    void display(){
+    void display(){ //T.C -O(n)
         for (int i = front; i < back; i++)
         {
             cout<<arr[i]<<" ";

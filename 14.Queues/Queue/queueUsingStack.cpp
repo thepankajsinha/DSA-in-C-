@@ -7,15 +7,15 @@ class myQueue{
     stack<int> st;
     stack<int> helper;
 
-    void push(int val){
+    void push(int val){ //T.C -O(1)
         st.push(val);
     }
 
-    int size(){
+    int size(){  //T.C -O(1)
         return st.size();
     }
 
-    void pop(){
+    void pop(){  //T.C -O(n)
         while (st.size()>0){
             int x = st.top();
             helper.push(x);
@@ -31,7 +31,7 @@ class myQueue{
         }
     }
 
-    int returnFront(){
+    int returnFront(){ //T.C -O(n)
         while (st.size()>0){
             int x = st.top();
             helper.push(x);
@@ -47,11 +47,11 @@ class myQueue{
         }
     }
 
-    int returnBack(){
+    int returnBack(){ //T.C -O(1)
         return st.top();
     }
 
-    void display(){
+    void display(){  //T.C -O(n)
         while (st.size()>0){
             cout<<st.top()<<" ";
             int x = st.top();

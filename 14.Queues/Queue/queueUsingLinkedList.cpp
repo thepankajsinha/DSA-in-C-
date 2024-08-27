@@ -23,7 +23,7 @@ class Queue{
     }
 
     //inserting node at tail
-    void push(int val){
+    void push(int val){  //T.C -O(1)
         Node* newNode = new Node(val);
         if(size == 0) head = tail = newNode;
         else{
@@ -34,7 +34,7 @@ class Queue{
     }
 
     //deleting node from head
-    void pop(){
+    void pop(){  //T.C -O(1)
         if(size == 0){
             cout<<"Queue is empty!"<<endl;
             return;
@@ -43,7 +43,7 @@ class Queue{
         size--;
     }
 
-    int front(){
+    int front(){  //T.C -O(1)
         if(size == 0){
             cout<<"Queue is empty!"<<endl;
             return -1;
@@ -51,7 +51,7 @@ class Queue{
         return head->val;
     }
 
-    int back(){
+    int back(){  //T.C -O(1)
         if(size == 0){
             cout<<"Queue is empty!"<<endl;
             return -1;
@@ -60,7 +60,7 @@ class Queue{
     }
 
 
-    void display(){
+    void display(){  //T.C -O(n)
       Node* temp = head;
       while(temp!= NULL){
         cout<<temp->val<<" ";
@@ -69,7 +69,7 @@ class Queue{
       cout<<endl;
     }
 
-    int returnSize(){
+    int returnSize(){  //T.C -O(1)
         return size;
     }
 
