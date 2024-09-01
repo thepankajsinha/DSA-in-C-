@@ -13,17 +13,14 @@ public:
     }
 };
 
-//Best case- T.C- O(logn) when tree is balanced
-//Worst case- T.C- O(n)
-//Average case- T.C- O(n)
-bool searchInBST(Node* root, int target){
-    if(root == NULL) return false;
-    if(root->val == target) return true;
-    if(root->val > target) return searchInBST(root->left, target);
-    else return searchInBST(root->right, target);
+int LCA(Node* root, Node* p, Node*  q){
+    if(root->val < p->val && root->val < q->val) return LCA(root->right, p, q);
+    else if(root->val > p->val && root->val > q->val) return LCA(root->left, p, q);
+    else return root->val;
 }
+
 int main(){
-    // Create a binary tree
+    // Create a binary search tree
     //      10
     //    /    \
     //   5      15
@@ -47,6 +44,8 @@ int main(){
     root->right->right = new Node(18);
     root->right->left->right = new Node(13);
 
-    cout<<(searchInBST(root, 10) ? "Found" : "Not found"); //Found
+    Node* p = root->right->left;
+    Node* q = root->right->right;
     
+    cout<<LCA(root,p,q)<<endl; //15
 }
