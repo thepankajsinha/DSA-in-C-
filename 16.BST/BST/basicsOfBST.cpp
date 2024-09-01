@@ -36,6 +36,7 @@ void insertInBST(Node* root, int val){
     else return;
 }
 
+
 Node* deleteInBST(Node* root, int key){
 
     if(root->val == key){
@@ -99,16 +100,27 @@ int main(){
     root->right->left = new Node(12);
     root->right->right = new Node(18);
     root->right->left->right = new Node(13);
+
+    //insert element into BST
+    insertInBST(root, 9);
+    insertInBST(root, 20);
+    inOrder(root); //2 5 6 8 9 10 12 13 15 18 20
+    cout<<endl;
     
-    deleteInBST(root, 6);
-    inOrder(root);  //2 5 8 10 12 13 15 18
+    //delete element from BST
+    deleteInBST(root, 9);
+    inOrder(root);  //2 5 6 8 10 12 13 15 18 20
     cout<<endl;
 
-    deleteInBST(root, 12);
-    inOrder(root);  //2 5 8 10 13 15 18
+    deleteInBST(root, 20);
+    inOrder(root);  //2 5 6 8 10 12 13 15 18
     cout<<endl;
 
     deleteInBST(root, 10);
-    inOrder(root);  //2 5 8 13 15 18
+    inOrder(root);  //2 5 6 8 12 13 15 18
+    cout<<endl;
 
+    //search an element
+    cout<<"Search 12: "<<(searchInBST(root, 12)? "Found" : "Not Found")<<endl; //Found
+    
 }

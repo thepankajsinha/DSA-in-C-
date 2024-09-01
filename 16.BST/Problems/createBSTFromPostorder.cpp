@@ -1,4 +1,4 @@
-//Create a BST from the give preorder traversal
+//Create a BST from the give postorder traversal
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -27,10 +27,11 @@ void insertInBST(Node* root, int val){
     else return;
 }
 
-Node* createBSTFromPreorder(vector<int>& preorder){
-    Node* root = new Node(preorder[0]);
-    for(int i = 1; i < preorder.size(); i++){
-        insertInBST(root, preorder[i]);
+Node* createBSTFromPostorder(vector<int>& postorder){
+    int n = postorder.size();
+    Node* root = new Node(postorder[0]);
+    for(int i =n-1; i > 0; i--){
+        insertInBST(root, postorder[i]);
     }
     return root;
 }
@@ -43,8 +44,8 @@ void inOrder(Node* root){
 }
 
 int main(){
-    vector<int> preorder = {22, 12, 8, 20, 30, 25, 40};
-    Node* root = createBSTFromPreorder(preorder);
+    vector<int> postorder = {8, 20, 12, 25, 40, 30, 22};
+    Node* root = createBSTFromPostorder(postorder);
     inOrder(root); //8 12 20 22 25 30 40
     return 0;
 }
