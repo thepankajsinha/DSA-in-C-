@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int binarySearch(vector<int> &v, int key){
+int binarySearch(vector<int> &v, int key){  //T.C - O(logn)
     int start = 0;
     int end = v.size()-1;
     
