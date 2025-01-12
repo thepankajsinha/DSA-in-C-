@@ -4,16 +4,15 @@ using namespace std;
 
 void decimalToBinary(int decimal){
 
-    string binary = "";
-
-    while (decimal > 0){
-
-       if(decimal % 2 == 0) binary = binary + "0";
-       else binary = binary + "1";
-       decimal = decimal / 2;
+    int binary = 0;
+    int i = 0;
+    
+    while(n != 0){
+        int lastBit = n & 1; //to get last bit  
+        binary = binary + (lastBit * pow(10, i));  
+        n = n >> 1;
+        i++;
     }
-    reverse(binary.begin(), binary.end());
-    cout<<binary<<endl;
 }
 
 int main(){
